@@ -1,9 +1,6 @@
 let today = moment().format("MMMM Do YYYY");
-
 let currentHour = moment().format("HH");
-
 let thisHour = parseInt(currentHour);
-
 
 var hour9 = document.getElementById('hour-9');
 var hour10 = document.getElementById('hour-10');
@@ -57,9 +54,8 @@ function getEvents() {
 // Store user event to local storage
 function postEvents() {
   localStorage.setItem("events", JSON.stringify(allEvents));
-
 }
-
+//we want to add the event target, which will tell us which button (i.e. id hour-9 vs hour-11) was clicked on
 // Set event listener on all button clicks, get text value and id, and call sendEvents function
 //need to do listener for the entire container where the save button is which is labelled
 $(function () {
@@ -79,3 +75,9 @@ $(function () {
     sendEvents();
   });
 });
+
+
+// function currentTime() {
+//     const current = moment().format("MM Do YYYY, h:mm:ss a");
+//     $("#today").text(current);
+// }
