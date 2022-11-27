@@ -70,7 +70,7 @@ $(function () {
       hour: myTime,
       event: myEvent,
     };
-    eventsArray.push(calendarEvent);
+    allEvents.push(calendarEvent);
     sendEvents();
   });
 });
