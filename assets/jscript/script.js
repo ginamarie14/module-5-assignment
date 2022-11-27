@@ -58,7 +58,7 @@ function postEvents() {
 //we want to add the event target, which will tell us which button (i.e. id hour-9 vs hour-11) was clicked on
 //need to do listener for the entire container where the save button is which is labelled
 $(function () {
-  timeBlock();
+  blockConditions();
   $("#currentDay").text(today);
   //function to saveText(inputElement)
   getEvents();
