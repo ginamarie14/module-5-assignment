@@ -71,19 +71,10 @@ $(function () {
       event: myEvent,
     };
     allEvents.push(calendarEvent);
-    sendEvents();
+    postEvents();
   });
 });
 
 document.querySelectorAll('.saveBtn').forEach(function (saveBtn) {
     saveBtn.addEventListener('click', postEvents);
   });
-
-// document.querySelectorAll('.saveBtn').forEach(function (saveBtn) {
-//     saveBtn.addEventListener('click', saveTask);
-//   });
-
-// function currentTime() {
-//     const current = moment().format("MM Do YYYY, h:mm:ss a");
-//     $("#today").text(current);
-// }
