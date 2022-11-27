@@ -58,7 +58,7 @@ function postEvents() {
 //we want to add the event target, which will tell us which button (i.e. id hour-9 vs hour-11) was clicked on
 //need to do listener for the entire container where the save button is which is labelled
 $(function () {
-  timeBlocks();
+  timeBlock();
   $("#currentDay").text(today);
   //function to saveText(inputElement)
   getEvents();
@@ -75,6 +75,13 @@ $(function () {
   });
 });
 
+document.querySelectorAll('.saveBtn').forEach(function (saveBtn) {
+    saveBtn.addEventListener('click', postEvents);
+  });
+
+// document.querySelectorAll('.saveBtn').forEach(function (saveBtn) {
+//     saveBtn.addEventListener('click', saveTask);
+//   });
 
 // function currentTime() {
 //     const current = moment().format("MM Do YYYY, h:mm:ss a");
