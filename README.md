@@ -1,20 +1,9 @@
 # module-5-assignment
 
-This web application is a user's daily planner. Events can be added every hour from 9am to 5pm (typical business hours) by typing in an event or task in the text area beside each hour. These events are saved when the user clicks on the save button to the right of the text area where an event was  
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-Acceptance Criteria
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
+This web application is a user's daily planner.
+
+Events can be added every hour from 9am to 5pm (typical business hours) by typing in an event or task in the text area of each time block. These events are saved when the user clicks on the save button to the right of the text area where an event was typed in. These events remain on screen even if the user refreshes their web browser.
+
+Depending on the time, each time block will change colors, with green blocks representing the future, red blocks representing the present, and grey blocks representing the past.
+
+Find the link to the deployed site here:

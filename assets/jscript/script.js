@@ -2,37 +2,19 @@ let today = moment().format("MMMM Do YYYY");
 let currentHour = moment().format("HH");
 let thisHour = parseInt(currentHour);
 
-var hour9 = document.getElementById('hour-9');
-var hour10 = document.getElementById('hour-10');
-var hour11 = document.getElementById('hour-11');
-var hour12 = document.getElementById('hour-12');
-var hour13 = document.getElementById('hour-13');
-var hour14 = document.getElementById('hour-14');
-var hour15 = document.getElementById('hour-15');
-var hour16 = document.getElementById('hour-16');
-var hour17 = document.getElementById('hour-17');
-
-const businessHours = [
-  parseInt(hour9),
-  parseInt(hour10),
-  parseInt(hour11),
-  parseInt(hour12),
-  parseInt(hour13),
-  parseInt(hour14),
-  parseInt(hour15),
-  parseInt(hour16),
-  parseInt(hour17),
-];
-
-//we want to add the event target, which will tell us which button (i.e. id hour-9 vs hour-11) was clicked on
 function blockConditions() {
-  // Set colors based on current hour
-  $("textarea").each(function () {
-    if (this.id < thisHour) {
+  var currentHour = moment().hours();
+  $(".time-block").each(function () {
+    var blockHour = parseInt($(this).attr("id").split("-")[1]);
+    // Set colors based on current hour
+    if (blockHour < currentHour) {
       $(this).addClass("past");
-    } else if (this.id === thisHour) {
+    } else if (blockHour === currentHour) {
+      $(this).removeClass("past");
       $(this).addClass("present");
-    } else if (this.id > thisHour) {
+    } else {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
       $(this).addClass("future");
     }
   });
@@ -60,7 +42,7 @@ function postEvents() {
 $(function () {
   blockConditions();
   $("#currentDay").text(today);
-  //function to saveText(inputElement)
+  //function to save text (input element)
   getEvents();
   $(".saveBtn").on('click', function () {
     var myTime = $(this).siblings("textarea").attr("id");
@@ -75,11 +57,12 @@ $(function () {
   });
 });
 
+//save button saves the input
 document.querySelectorAll('.saveBtn').forEach(function (saveBtn) {
     saveBtn.addEventListener('click', postEvents);
   });
 
-
+//the below is so that the values stay after refreshing
 $('#hour-9 .myEvent').val(localStorage.getItem('hour-9'));
 $('#hour-10 .myEvent').val(localStorage.getItem('hour-10'));
 $('#hour-11 .myEvent').val(localStorage.getItem('hour-11'));
@@ -89,4 +72,3 @@ $('#hour-14 .myEvent').val(localStorage.getItem('hour-14'));
 $('#hour-15 .myEvent').val(localStorage.getItem('hour-15'));
 $('#hour-16 .myEvent').val(localStorage.getItem('hour-16'));
 $('#hour-17 .myEvent').val(localStorage.getItem('hour-17'));
-
