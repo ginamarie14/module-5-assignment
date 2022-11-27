@@ -6,4 +6,4 @@ Events can be added every hour from 9am to 5pm (typical business hours) by typin
 
 Depending on the time, each time block will change colors, with green blocks representing the future, red blocks representing the present, and grey blocks representing the past.
 
-Find the link to the deployed site here:
+Find the link to the deployed site here: https://ginamarie14.github.io/module-5-assignment/
